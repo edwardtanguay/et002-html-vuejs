@@ -1,0 +1,5 @@
+- x list all employees
+- x make a button "Add Employee"
+	- x call method addEmployee()
+- x add input box for name of employee	
+- .. add delete button

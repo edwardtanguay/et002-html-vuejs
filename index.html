@@ -209,8 +209,15 @@
                             style="width: 350px; margin-left: -205px;">25 Years Experience</h2>
                         <h6 class="text-uppercase">{{employeeIntro}}</h6>
                         <h1 class="mb-4">We Provide Reliable And Effective Legal Services</h1>
+                        <button @click="addEmployee()">Add Employee</button>
+                        <input v-model="newEmployeeLastName" type="text">
                         <div class="employees">
                             We have {{employees.length}} employees.
+                            <div class="employee"
+                                 v-for="employee in employees">
+                                {{employee.lastName}}
+                                <button @click="deleteEmployee(employee)">delete</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -748,7 +755,8 @@
             data() {
                 return {
                     employeeIntro: '',
-                    employees: []
+                    employees: [],
+                    newEmployeeLastName: ''
                 }
             },
             methods: {
@@ -765,7 +773,19 @@
                     this.employees.push({
                         lastName: "Smith"
                     });
+                    this.employees.push({
+                        lastName: "Johnson"
+                    });
                     this.employeeIntro = `Meet our team of ${this.employees.length} experts`;
+                },
+                addEmployee() {
+                    this.employees.push({
+                        lastName: this.newEmployeeLastName,
+                    });
+                    this.newEmployeeLastName = '';
+                },
+                deleteEmployee(employee) {
+                    this.employees = this.employees.filter(m => m.lastName !== employee.lastName);
                 }
             }
         }).mount('#vueapp').initialize();
