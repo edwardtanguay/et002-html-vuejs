@@ -1,0 +1,20 @@
+.employee {
+	display: flex;
+	gap: 1rem;
+	margin-bottom: 1rem;
+}
+
+.employee .name {
+	color:#000; 
+	font-size: 2rem;
+}
+
+.employee img {
+	height: 8rem;
+	cursor: pointer;
+}
+
+.employee .name .title {
+	color: #999;
+	font-style: italic;
+}

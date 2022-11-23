@@ -3,4 +3,5 @@
 	- x call method addEmployee()
 - x add input box for name of employee	
 - x add delete button
-- .. get employees from API
+- x get employees from API
+- .. click on photo and toggle name/title
